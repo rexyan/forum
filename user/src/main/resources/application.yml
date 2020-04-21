@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: user
+    
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.16.47:3306/forum?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+  
+  redis: 
+    host: 127.0.0.1
+    port: 6379
+  
+  
+server:
+  port: 8762
+
+# 指定注册到哪个注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true #注册自己服务使用ip的方式
+
+# mybatis
+mybatis: 
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
